@@ -22,8 +22,8 @@ function Questions() {
   };
   return (
     <>
-      {count === 0 ? <h1>Is your name Charlie?</h1> : null}
-      {count === 1 ? <h1>Are you 7 years old?</h1> : null}
+      {count === 0 ? <h1>Is your name Hudson?</h1> : null}
+      {count === 1 ? <h1>Are you 4 years old?</h1> : null}
       {count === 2 ? (
         <>
           <h1>Don't push this button</h1>
@@ -54,7 +54,7 @@ function Questions() {
           </button>
           {count >= 7 ? (
             <>
-              <h1>Happy Birthday Charlie!</h1>
+              <h1>Happy Birthday Hudson!</h1>
               <h2>❤️ Lucy, Ziggy, Aunt Kait, Uncle Matt</h2>
             </>
           ) : null}

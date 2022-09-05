@@ -7,5 +7,5 @@ npm run build
 deploy
 
 ```sh
-surge build happy-birthday-charlie-7.surge.sh
+surge build happy-birthday-hudson-4.surge.sh
 ```
