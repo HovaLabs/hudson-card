@@ -56,7 +56,7 @@
 }
 
 .animated-button {
-  animation: button-moving infinite 2s;
+  animation: button-moving infinite 3s;
   width: 100px;
   height: 100px;
   padding: 20px;

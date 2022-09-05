@@ -59,6 +59,7 @@ function Questions() {
           ) : null}
           <button
             style={buttonStyles}
+            className="animated-button"
             onClick={() => {
               setCount((c) => c + 1);
               count % 2 === 0 ? fart.play() : burp.play();
