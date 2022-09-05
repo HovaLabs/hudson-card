@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes button-moving {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  20% {
+    transform: translate(-30vw, -30vh);
+  }
+  40% {
+    transform: translate(30vw, 30vh);
+  }
+  60% {
+    transform: translate(-30vw, 30vh);
+  }
+  80% {
+    transform: translate(30vw, -30vh);
+  }
+}
+
+.animated-button {
+  animation: button-moving infinite 2s;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}

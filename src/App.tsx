@@ -7,6 +7,10 @@ var fart = new Howl({
   src: ["/fart.mp3"],
 });
 
+var burp = new Howl({
+  src: ["/burp.mp3"],
+});
+
 function Questions() {
   const [count, setCount] = React.useState(0);
   const buttonStyles = {
@@ -26,39 +30,53 @@ function Questions() {
       {count === 1 ? <h1>Are you 4 years old?</h1> : null}
       {count === 2 ? (
         <>
-          <h1>Don't push this button</h1>
-          <button style={buttonStyles} onClick={() => setCount((c) => c + 1)}>
-            FART
+          <h1>Betcha can't push this button</h1>
+          <button
+            style={{ ...buttonStyles, width: undefined, height: undefined }}
+            className="animated-button"
+            onClick={() => setCount((c) => c + 1)}
+          >
+            🤪
           </button>
         </>
       ) : null}
-      {count === 3 ? (
+      {count >= 3 && count < 13 ? (
         <>
-          <h1>Why did you push the button?</h1>
+          <h1>Oh dang, you're good</h1>
+          <h1>I bet you can't push this button 10 times</h1>
           <button style={buttonStyles} onClick={() => setCount((c) => c + 1)}>
-            FART
+            🤨
+            {count - 3}
           </button>
         </>
       ) : null}
-      {count >= 4 ? (
+      {count >= 13 ? (
         <>
-          <h1>Ok, we warned you</h1>
+          {count === 13 ? (
+            <h1>
+              Oh dang, you're <em>really</em> good
+            </h1>
+          ) : null}
           <button
             style={buttonStyles}
             onClick={() => {
               setCount((c) => c + 1);
-              fart.play();
+              count % 2 === 0 ? fart.play() : burp.play();
             }}
           >
-            FART
+            🤯
           </button>
-          {count >= 7 ? (
+          {count === 14 ? (
+            <h1>uh oh. Please don't hit the button anymore</h1>
+          ) : null}
+          {count === 18 ? <h1>💩</h1> : null}
+          {count >= 22 ? (
             <>
               <h1>Happy Birthday Hudson!</h1>
               <h2>❤️ Lucy, Ziggy, Aunt Kait, Uncle Matt</h2>
             </>
           ) : null}
-          {count >= 8 ? <h3>and cat</h3> : null}
+          {count >= 25 ? <h3>and cat</h3> : null}
         </>
       ) : null}
       {count < 2 ? (
@@ -77,7 +95,7 @@ function Questions() {
           </button>
         </div>
       ) : null}
-      {count >= 7 ? (
+      {count >= 22 ? (
         <ReactConfetti width={window.innerWidth} height={window.innerHeight} />
       ) : null}
     </>
